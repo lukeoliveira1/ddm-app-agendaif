@@ -6,19 +6,35 @@ import {
   ViewForm,
   CustomButton,
   TextButton,
+  TextInput,
 } from "./styles";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+} from "@expo-google-fonts/roboto";
+
 import ifrn from "../../assets/ifrn.png";
-import InputForm from "../../components/Input";
 
 export default function Home() {
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
     <Container>
       <Logo source={ifrn} />
       <Title>Agenda{"\n"}IFRN</Title>
 
       <ViewForm>
-        <InputForm placeholder="Login" />
-        <InputForm placeholder="Senha" />
+        <TextInput placeholder="Login" />
+        <TextInput placeholder="Senha" />
         <CustomButton>
           <TextButton>Entrar</TextButton>
         </CustomButton>

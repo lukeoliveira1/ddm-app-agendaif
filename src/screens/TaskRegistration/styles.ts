@@ -1,41 +1,30 @@
 import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.primary};
+  justify-content: center;
   align-items: center;
+  background-color: #f5f5f5;
 `;
 
-export const Title = styled.Text`
-  font-size: 40px;
-  color: #fefefe;
-  font-weight: bold;
-  text-align: center;
+export const StyledText = styled.Text`
+  font-size: 24px;
   font-family: "Roboto_700Bold";
-`;
-
-export const Logo = styled.Image`
-  margin-top: 100px;
-  margin-bottom: 70px;
-  width: 120px;
-  height: 160px;
+  margin-bottom: 32px;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const TextInput = styled.TextInput`
   width: 250px;
-  height: 40px;
+  height: 50px;
   border-radius: 5px;
   margin-bottom: 12px;
   padding: 10px;
+  border-color: ${({ theme }) => theme.colors.gray};
+  border: 0.5px;
   background-color: ${({ theme }) => theme.colors.background};
   font-family: "Roboto_400Regular";
-`;
-
-export const ViewForm = styled.View`
-  flex: 1;
-  align-items: "center";
-  justify-content: "center";
-  margin-top: 50px;
 `;
 
 export const CustomButton = styled.TouchableOpacity`
@@ -44,7 +33,9 @@ export const CustomButton = styled.TouchableOpacity`
   padding: 10px;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.gray};
+  border-radius: 5px;
+  margin-top: 8px;
+  background-color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const TextButton = styled.Text`
@@ -52,3 +43,16 @@ export const TextButton = styled.Text`
   font-family: "Roboto_500Medium";
   color: ${({ theme }) => theme.colors.background};
 `;
+
+export const styles = StyleSheet.create({
+  dropdown: {
+    width: 250,
+    height: 50,
+    borderColor: "#666666",
+    color: "#666666",
+    borderWidth: 0.7,
+    borderRadius: 5,
+    paddingHorizontal: 8,
+    marginBottom: 12,
+  },
+});
